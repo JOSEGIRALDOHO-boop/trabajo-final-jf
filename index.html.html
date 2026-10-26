@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fútbol Fest · Torneo internacional de barrios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#2334e0;--blue-d:#1a27b0;--yellow:#ffd43b;--ink:#10113a;--paper:#fff;--soft:#eef0ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0d0e2b;--ink:#f2f3ff;--soft:#171a4a}}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:80px;height:100%}
+body{margin:0;font-family:Montserrat,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+header{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid rgba(128,128,160,.3);display:flex;align-items:center;justify-content:space-between;padding:18px 32px}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.5px}
+nav{display:flex;align-items:center;gap:26px;font-size:14px;font-weight:600}
+nav a{color:inherit;text-decoration:none}nav a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.hero{background:var(--blue);color:#fff;padding:190px 32px 56px;min-height:640px;display:flex;flex-direction:column;justify-content:flex-end}
+.hero h1{font-size:clamp(44px,6vw,76px);line-height:1;margin:0 0 20px;letter-spacing:-2px;font-weight:800}
+.hero h2{color:var(--yellow);font-size:clamp(26px,3vw,36px);line-height:1.2;margin:0 0 56px;max-width:420px;letter-spacing:-1px}
+.hero p{font-size:18px;max-width:640px;margin:0 0 26px}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.chips span{background:var(--yellow);color:var(--ink);font-weight:700;font-size:15px;padding:9px 18px;border-radius:99px}
+.btn{display:inline-block;font:inherit;font-weight:700;font-size:16px;text-decoration:none;color:var(--ink);background:var(--yellow);border:3px solid #10113a;border-radius:10px;padding:14px 32px;box-shadow:5px 5px 0 #10113a;margin:0 12px 12px 0;cursor:pointer}
+.btn.w{background:#fff}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 #10113a}
+section{padding:80px 32px;max-width:1140px;margin:0 auto}
+section h2.t{font-size:clamp(30px,4vw,44px);letter-spacing:-1.5px;margin:0 0 12px;line-height:1.1}
+.lead{max-width:60ch;margin:0 0 36px;opacity:.85}
+.band{background:var(--soft)}
+.band>div{max-width:1140px;margin:0 auto;padding:80px 32px}
+.dates{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.dates div{border-left:6px solid var(--blue);padding:4px 0 4px 18px}
+.dates b{display:block;font-size:30px;letter-spacing:-1px}
+.days{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.days h3{margin:0 0 14px;font-size:22px;background:var(--yellow);color:var(--ink);display:inline-block;padding:4px 14px;border-radius:8px}
+.row{display:grid;grid-template-columns:78px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid rgba(128,128,160,.3)}
+.row time{font-weight:800;color:var(--blue)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .row time{color:var(--yellow)}}
+.row span{display:block;font-size:14px;opacity:.75}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.how div{background:var(--paper);border:2px solid var(--ink);border-radius:14px;padding:22px}
+.how h3{margin:0 0 8px}
+.tix{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tix div{border:3px solid var(--ink);border-radius:14px;padding:26px;box-shadow:6px 6px 0 var(--ink);background:var(--paper)}
+.tix div.hot{background:var(--yellow);color:#10113a;border-color:#10113a;box-shadow:6px 6px 0 #10113a}
+.tix h3{margin:0}.tix .p{font-size:34px;font-weight:800;letter-spacing:-1px;margin:6px 0 10px}
+.tix ul{padding-left:18px;margin:0 0 20px;font-size:14px}
+.tix .btn{margin:0;box-shadow:3px 3px 0 var(--ink);padding:10px 22px;font-size:14px}
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.news a{color:inherit;text-decoration:none;border-top:4px solid var(--blue);padding-top:12px;display:block}
+.news small{opacity:.7}.news h3{margin:4px 0}
+footer{background:var(--blue);color:#fff;padding:36px 32px;text-align:center;font-size:14px}
+@media (max-width:900px){nav a{display:none}.dates,.days,.how,.tix,.news{grid-template-columns:1fr}.hero{padding-top:120px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Fútbol Fest</div>
+  <nav>
+    <a href="#fechas">Fechas</a><a href="#agenda">Agenda</a><a href="#llegar">Cómo llegar</a><a href="#entradas">Entradas</a><a href="#noticias">Noticias</a>
+      </nav>
+</header>
+
+<main>
+<div class="hero">
+  <h1>Fútbol Fest</h1>
+  <h2>Torneo internacional de barrios</h2>
+  <p>32 equipos de barrio de 5 continentes juegan dos días en Medellín. Inscríbete como jugador, entrenador o público en menos de 3 minutos.</p>
+  <div class="chips"><span>14–15 / 11 / 2026</span><span>Medellín, Colombia</span><span>32 barrios · 18 países</span></div>
+  <div><a class="btn" href="#entradas">Comprar entrada</a><a class="btn w" href="#agenda">Ver agenda</a></div>
+</div>
+
+<div class="band" id="fechas"><div>
+  <h2 class="t">Fechas clave</h2>
+  <p class="lead">Tres fechas que debes tener en el calendario. Las inscripciones se cierran cuando se completan los 32 cupos.</p>
+  <div class="dates">
+    <div><b>1 / 09</b><span>Abren las inscripciones</span></div>
+    <div><b>31 / 10</b><span>Cierran las inscripciones</span></div>
+    <div><b>14–15 / 11</b><span>Torneo en Medellín</span></div>
+  </div>
+</div></div>
+
+<section id="agenda">
+  <h2 class="t">Agenda</h2>
+  <p class="lead">Dos días de partidos, charlas y celebración de barrio.</p>
+  <div class="days">
+    <div><h3>Sábado 14</h3>
+      <div class="row"><time>8:00</time><div>Acreditación de equipos<span>Entrada principal</span></div></div>
+      <div class="row"><time>9:30</time><div>Ceremonia inaugural<span>Desfile de los 32 barrios</span></div></div>
+      <div class="row"><time>10:30</time><div>Fase de grupos<span>8 grupos, 4 canchas</span></div></div>
+      <div class="row"><time>16:00</time><div>Foro «El barrio y la cancha»<span>Entrenadores y líderes comunitarios</span></div></div>
+    </div>
+    <div><h3>Domingo 15</h3>
+      <div class="row"><time>9:00</time><div>Octavos y cuartos de final<span>Eliminación directa</span></div></div>
+      <div class="row"><time>13:00</time><div>Semifinales<span>Cancha central</span></div></div>
+      <div class="row"><time>16:00</time><div>Final<span>Con transmisión en vivo</span></div></div>
+      <div class="row"><time>18:00</time><div>Premiación y cierre<span>Música en vivo</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="band" id="llegar"><div>
+  <h2 class="t">Cómo llegar</h2>
+  <p class="lead">Lo esencial para viajar a Medellín desde cualquier país.</p>
+  <div class="how">
+    <div><h3>Vuelos</h3><p>Aterriza en el aeropuerto José María Córdova (MDE). Hay buses y taxis oficiales hasta la ciudad.</p></div>
+    <div><h3>Alojamiento</h3><p>Reserva en El Poblado, Laureles o el Centro: son las zonas más cercanas a las canchas.</p></div>
+    <div><h3>Visa</h3><p>Revisa si tu nacionalidad la necesita. Te enviamos la carta de invitación al confirmar tu inscripción.</p></div>
+  </div>
+</div></div>
+
+<section id="entradas">
+  <h2 class="t">Entradas</h2>
+  <p class="lead">Elige tu rol y completa la inscripción desde cualquier lugar del mundo.</p>
+  <div class="tix">
+    <div><h3>Público</h3><div class="p">$ 25 USD</div><ul><li>Acceso los dos días</li><li>Entrada a todas las canchas</li></ul><a class="btn" href="#">Inscribirme</a></div>
+    <div class="hot"><h3>Jugador</h3><div class="p">Gratis</div><ul><li>Con tu equipo de barrio</li><li>Camiseta y acreditación</li></ul><a class="btn w" href="#">Inscribirme</a></div>
+    <div><h3>Entrenador</h3><div class="p">Gratis</div><ul><li>Acceso al foro del sábado</li><li>Zona técnica en la cancha</li></ul><a class="btn" href="#">Inscribirme</a></div>
+  </div>
+</section>
+
+<section id="noticias" style="padding-top:0">
+  <h2 class="t">Noticias</h2>
+  <div class="news" style="margin-top:28px">
+    <a href="#"><small>12 oct 2026</small><h3>Ya están los 32 barrios del torneo</h3><span>Conoce los equipos clasificados de los cinco continentes.</span></a>
+    <a href="#"><small>5 oct 2026</small><h3>Así se jugará el sorteo de grupos</h3><span>Ocho grupos y un formato pensado para que todos jueguen.</span></a>
+    <a href="#"><small>28 sep 2026</small><h3>Guía para viajar con tu equipo</h3><span>Vuelos, hospedaje y trámites en un solo lugar.</span></a>
+  </div>
+</section>
+</main>
+<footer>Fútbol Fest 2026 · Medellín, Colombia</footer>
+
+</body>
+</html>
